@@ -1,0 +1,71 @@
+name: online_learning_platform
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0-66.0.dev <4.0.0'
+
+
+
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  sidebarx: ^0.16.2
+  table_calendar: ^3.0.9
+  fl_chart: ^0.63.0
+  cloud_firestore: ^4.9.3
+  firebase_auth: ^4.10.1
+  firebase_core: ^2.17.0
+  get: ^4.6.6
+  image_picker: ^1.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

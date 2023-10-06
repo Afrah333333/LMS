@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "645512761007",
+    "project_id": "learning-management-syst-c8af1",
+    "storage_bucket": "learning-management-syst-c8af1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645512761007:android:9022b1736551cc33b20e5a",
+        "android_client_info": {
+          "package_name": "com.example.online_learning_platform"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-7n8MfvvaFmtV6ObkN4UhsoOKnPNPkQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
