@@ -1,16 +1,14 @@
 # online_learning_platform
 
-"A new Flutter project."
+Welcome to the Learning Management System (LMS) Flutter project! This application provides a streamlined platform for the efficient management and delivery of educational content. Built with Flutter, it offers a modern and responsive interface, making learning accessible anytime, anywhere.
 
-## Getting Started
+<div style="display: flex; justify-content: space-between;">
+<img src="images/register.png" alt="App Screenshot" width="200" height="400">
+<img src="images/write home1.png" alt="App Screenshot" width="200" height="400">
+  <img src="images/select classes.png" alt="App Screenshot" width="200" height="400">
+  <img src="images/select salary.png" alt="App Screenshot" width="200" height="400">
+  <img src="images/select task.png" alt="App Screenshot" width="200" height="400">
+  <img src="images/select timetable.png" alt="App Screenshot" width="200" height="400">
+</div>
+Feel free to explore the codebase, contribute, or use it as a starting point for your educational app. Happy learning!
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
