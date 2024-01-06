@@ -4,11 +4,11 @@ Welcome to the Learning Management System (LMS) Flutter project! This applicatio
 
 <div style="display: flex; justify-content: space-between;">
 <img src="images/register.png" alt="App Screenshot" width="200" height="400">
-<img src="images/write home1.png" alt="App Screenshot" width="200" height="400">
-  <img src="images/select classes.png" alt="App Screenshot" width="200" height="400">
-  <img src="images/select salary.png" alt="App Screenshot" width="200" height="400">
-  <img src="images/select task.png" alt="App Screenshot" width="200" height="400">
-  <img src="images/select timetable.png" alt="App Screenshot" width="200" height="400">
+<img src="assets/write home1.png" alt="App Screenshot" width="200" height="400">
+  <img src="assets/select classes.png" alt="App Screenshot" width="200" height="400">
+  <img src="assets/select salary.png" alt="App Screenshot" width="200" height="400">
+  <img src="assets/select task.png" alt="App Screenshot" width="200" height="400">
+  <img src="assets/select timetable.png" alt="App Screenshot" width="200" height="400">
 </div>
 Feel free to explore the codebase, contribute, or use it as a starting point for your educational app. Happy learning!
 
