@@ -2,18 +2,16 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../../common_widgets/admin/s_register.dart';
-import '../../../../common_widgets/admin/t_register.dart';
 import '../../../../common_widgets/students/student_discussion.dart';
 
-class AdminDashboardMobile extends StatefulWidget {
-   const AdminDashboardMobile({super.key});
+class TeacherDashboardMobile extends StatefulWidget {
+   const TeacherDashboardMobile({super.key});
 
   @override
-  State<AdminDashboardMobile> createState() => _AdminDashboardMobileState();
+  State<TeacherDashboardMobile> createState() => _TeacherDashboardMobileState();
 }
 
-class _AdminDashboardMobileState extends State<AdminDashboardMobile> {
+class _TeacherDashboardMobileState extends State<TeacherDashboardMobile> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
 
   DateTime _focusedDay = DateTime.now();
@@ -44,99 +42,120 @@ class _AdminDashboardMobileState extends State<AdminDashboardMobile> {
                 children: [
                   Row(
                     children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () {
-                            // Navigate to the student's courses page here
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SRegister(), // Replace with your courses page widget
-                            ));
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            height: 150, // Adjust height as needed
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 150, // Adjust height as needed
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
                               children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.wallet_membership_outlined),
-                                    SizedBox(width: 10),
-                                    Flexible(
-                                      child: Text(
-                                        "STUDENTS",
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("50", style: TextStyle(fontSize: 30)),
-                                    SizedBox(height: 2),
-                                    LinearProgressIndicator(
-                                      color: Colors.white10,
-                                      value: 1,
-                                    ),
-                                  ],
+                                Icon(Icons.work_history),
+                                SizedBox(width: 10),
+                                Flexible(
+                                  child: Text(
+                                    "SALARIES",
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("", style: TextStyle(fontSize: 30)),
+                                SizedBox(height: 2),
+                                LinearProgressIndicator(
+                                  color: Colors.white10,
+                                  value: 0.18,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(width: 10),
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () {
-                            // Navigate to the student's courses page here
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => TRegister(), // Replace with your courses page widget
-                            ));
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            height: 150, // Adjust height as needed
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 150, // Adjust height as needed
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
                               children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.wallet_membership_outlined),
-                                    SizedBox(width: 10),
-                                    Flexible(
-                                      child: Text(
-                                        "TEACHERS",
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("5", style: TextStyle(fontSize: 30)),
-                                    SizedBox(height: 2),
-                                    LinearProgressIndicator(
-                                      color: Colors.white10,
-                                      value: 1,
-                                    ),
-                                  ],
+                                Icon(Icons.wallet_membership_outlined),
+                                SizedBox(width: 10),
+                                Flexible(
+                                  child: Text(
+                                    "Test/Assignment",
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("20%", style: TextStyle(fontSize: 30)),
+                                SizedBox(height: 2),
+                                LinearProgressIndicator(
+                                  color: Colors.white10,
+                                  value: 1,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 150, // Adjust height as needed
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.perm_contact_calendar_outlined),
+                                SizedBox(width: 10),
+                                Flexible(
+                                  child: Text(
+                                    "Discussions",
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("1", style: TextStyle(fontSize: 30)),
+                                SizedBox(height: 2),
+                                LinearProgressIndicator(
+                                  color: Colors.white10,
+                                  value: 1,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(width: 10),

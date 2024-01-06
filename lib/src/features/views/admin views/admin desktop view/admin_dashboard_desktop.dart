@@ -1,6 +1,14 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:online_learning_platform/src/common_widgets/admin/s_register.dart';
+import 'package:online_learning_platform/src/common_widgets/admin/t_register.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../../../../common_widgets/admin/create_schedule.dart';
+import '../../../../common_widgets/students/student_discussion.dart';
+import '../../../../common_widgets/students/student_subject.dart';
+import '../../../../common_widgets/students/student_test.dart';
+import '../../../../common_widgets/students/student_timetable.dart';
 
 class AdminDashboardDesktop extends StatefulWidget {
   const AdminDashboardDesktop({super.key});
@@ -25,7 +33,7 @@ class _AdminDashboardDesktopState extends State<AdminDashboardDesktop> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Dashboard Dear Admin!',
+              'Dashboard Dear Student',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
@@ -36,161 +44,147 @@ class _AdminDashboardDesktopState extends State<AdminDashboardDesktop> {
               children: [
                 // Four Responsive Containers
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 150, // Adjust height as needed
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.work_history),
-                            SizedBox(width: 10),
-                            Flexible(
-                              child: Text(
-                                "My program",
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to the student's courses page here
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SRegister(), // Replace with your courses page widget
+                        ));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        Column(
+                        height: 150, // Adjust height as needed
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("18%", style: TextStyle(fontSize: 30)),
-                            SizedBox(height: 2),
-                            LinearProgressIndicator(
-                              color: Colors.white10,
-                              value: 0.18,
+                            Row(
+                              children: [
+                                Icon(Icons.work_history),
+                                SizedBox(width: 10),
+                                Flexible(
+                                  child: Text(
+                                    "STUDENTS",
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("50", style: TextStyle(fontSize: 30)),
+                                SizedBox(height: 2),
+                                LinearProgressIndicator(
+                                  color: Colors.white10,
+                                  value: 0.18,
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
+                    )
+
                 ),
                 SizedBox(width: 10),
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 150, // Adjust height as needed
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.wallet_membership_outlined),
-                            SizedBox(width: 10),
-                            Flexible(
-                              child: Text(
-                                "Members",
-                                overflow: TextOverflow.ellipsis,
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigate to the student's courses page here
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TRegister(), // Replace with your courses page widget
+                      ));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: 150, // Adjust height as needed
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.wallet_membership_outlined),
+                              SizedBox(width: 10),
+                              Flexible(
+                                child: Text(
+                                  "TEACHERS",
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("180", style: TextStyle(fontSize: 30)),
-                            SizedBox(height: 2),
-                            LinearProgressIndicator(
-                              color: Colors.white10,
-                              value: 1,
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("5", style: TextStyle(fontSize: 30)),
+                              SizedBox(height: 2),
+                              LinearProgressIndicator(
+                                color: Colors.white10,
+                                value: 1,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
+
                 SizedBox(width: 10),
                 Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 150, // Adjust height as needed
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.perm_contact_calendar_outlined),
-                            SizedBox(width: 10),
-                            Flexible(
-                              child: Text(
-                                "Mentor",
-                                overflow: TextOverflow.ellipsis,
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigate to the student's courses page here
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => TimetablePage(), // Replace with your courses page widget
+                      ));
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: 150, // Adjust height as needed
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.view_list_outlined),
+                              SizedBox(width: 10),
+                              Flexible(
+                                child: Text(
+                                  "CLASS SCHEDULE",
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("1", style: TextStyle(fontSize: 30)),
-                            SizedBox(height: 2),
-                            LinearProgressIndicator(
-                              color: Colors.white10,
-                              value: 1,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 150, // Adjust height as needed
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.view_list_outlined),
-                            SizedBox(width: 10),
-                            Flexible(
-                              child: Text(
-                                "Mentorship Programs",
-                                overflow: TextOverflow.ellipsis,
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("1", style: TextStyle(fontSize: 30)),
+                              SizedBox(height: 2),
+                              LinearProgressIndicator(
+                                color: Colors.white10,
+                                value: 1,
                               ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("11", style: TextStyle(fontSize: 30)),
-                            SizedBox(height: 2),
-                            LinearProgressIndicator(
-                              color: Colors.white10,
-                              value: 1,
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

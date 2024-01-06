@@ -6,8 +6,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:online_learning_platform/src/contants/authentication/login_page.dart';
-import 'package:online_learning_platform/src/contants/navbar/sidebar_options.dart';
 
+
+import '../../contants/navbar/student_sidebar.dart';
 import '../authentication_repo/auth_repo.dart';
 import '../models/user_model.dart';
 import '../user_repo/user_repository.dart';

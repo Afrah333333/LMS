@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:online_learning_platform/src/features/views/teacher%20views/teacher%20desktop%20view/teacher_registery_desktop.dart';
 import 'package:sidebarx/sidebarx.dart';
 import '../../common_widgets/students/student_dashboard.dart';
+import '../../common_widgets/students/student_registery.dart';
+import '../../common_widgets/teacher/teacher_dashboard.dart';
+import '../../common_widgets/teacher/teacher_registery.dart';
 import 'navbar_icons.dart';
 
 
 
-class StudentSidebar extends StatelessWidget {
-  StudentSidebar({Key? key}) : super(key: key);
+class TeacherSidebar extends StatelessWidget {
+  TeacherSidebar({Key? key}) : super(key: key);
 
   final _controller = SidebarXController(selectedIndex: 0, extended: true);
   final _key = GlobalKey<ScaffoldState>();
@@ -133,7 +137,7 @@ class ExampleSidebarX extends StatelessWidget   {
           height: 100,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Image.asset("assets/log.png"),
+            child: Image.asset("assets/educate.jpg"),
           ),
         );
       },
@@ -146,20 +150,34 @@ class ExampleSidebarX extends StatelessWidget   {
           },
         ),
         const SidebarXItem(
-          icon: Icons.playlist_add_circle,
-          label: 'My program',
+          icon: Icons.app_registration,
+          label: 'Programs',
         ),
+
         const SidebarXItem(
           icon: Icons.add_alert_sharp,
           label: 'Announcement',
         ),
+
         const SidebarXItem(
-          icon: Icons.account_balance_wallet_rounded,
-          label: 'Resources',
+          icon: Icons.message,
+          label: 'Events',
         ),
         const SidebarXItem(
           icon: Icons.message,
-          label: 'Discussions',
+          label: 'Attendance',
+        ),
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Result',
+        ),
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Fees',
+        ),
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Profile',
         ),
       ],
     );
@@ -183,17 +201,17 @@ class _ScreensExample extends StatelessWidget {
 
         switch (controller.selectedIndex) {
           case 0:
-            return StudentDashboard();
-          // case 1:
-          //   return MyProgramPage();
-          // case 2:
-          //   return AnnouncementPage();
-          // case 3:
-          //   return ResourcesPage();
-          // case 4:
-          //   return DiscussionPage();
+            return TeacherDashboard();
+          case 1:
+            return TeacherRegistery();
+        // case 2:
+        //   return AnnouncementPage();
+        // case 3:
+        //   return ResourcesPage();
+        // case 4:
+        //   return DiscussionPage();
           default:
-            return StudentDashboard();
+            return TeacherDashboard();
         }
       },
     );

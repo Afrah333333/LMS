@@ -1,20 +1,26 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:online_learning_platform/src/common_widgets/students/student_subject.dart';
-import 'package:online_learning_platform/src/common_widgets/students/student_test.dart';
-import 'package:online_learning_platform/src/common_widgets/students/student_timetable.dart';
+import 'package:online_learning_platform/src/common_widgets/admin/s_register.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../../../common_widgets/admin/t_register.dart';
 import '../../../../common_widgets/students/student_discussion.dart';
+import '../../../../common_widgets/students/student_subject.dart';
+import '../../../../common_widgets/students/student_test.dart';
+import '../../../../common_widgets/students/student_timetable.dart';
+import '../../../../common_widgets/teacher/add_class.dart';
+import '../../../../common_widgets/teacher/salary.dart';
+import '../../../../common_widgets/teacher/schedule/timetable.dart';
+import '../../../../common_widgets/teacher/task.dart';
 
-class StudentDashboardDesktop extends StatefulWidget {
-  const StudentDashboardDesktop({super.key});
+class TeacherDashboardDesktop extends StatefulWidget {
+  const TeacherDashboardDesktop({super.key});
 
   @override
-  State<StudentDashboardDesktop> createState() => _StudentDashboardDesktopState();
+  State<TeacherDashboardDesktop> createState() => _TeacherDashboardDesktopState();
 }
 
-class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
+class _TeacherDashboardDesktopState extends State<TeacherDashboardDesktop> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
@@ -45,56 +51,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                     onTap: () {
                       // Navigate to the student's courses page here
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => StudentSubject(), // Replace with your courses page widget
-                      ));
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      height: 150, // Adjust height as needed
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(Icons.work_history),
-                              SizedBox(width: 10),
-                              Flexible(
-                                child: Text(
-                                  "My Subjects",
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("20%", style: TextStyle(fontSize: 30)),
-                              SizedBox(height: 2),
-                              LinearProgressIndicator(
-                                color: Colors.white10,
-                                value: 0.18,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      // Navigate to the student's courses page here
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => AssignmentScreen(), // Replace with your courses page widget
+                        builder: (context) => TeacherClasses(teacherId: 'u00001', schoolId: '501'), // Replace with your courses page widget
                       ));
                     },
                     child: Container(
@@ -114,7 +71,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                               SizedBox(width: 10),
                               Flexible(
                                 child: Text(
-                                  "Test/Assignment",
+                                  "CLASS_SCHEDULE",
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -142,7 +99,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                     onTap: () {
                       // Navigate to the student's courses page here
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => DiscussionPage(), // Replace with your courses page widget
+                        builder: (context) => TaskPage(schoolId: '501', groupId: 'u0001',), // Replace with your courses page widget
                       ));
                     },
                     child: Container(
@@ -162,7 +119,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                               SizedBox(width: 10),
                               Flexible(
                                 child: Text(
-                                  "Discussions",
+                                  "TASKS",
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -190,7 +147,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                     onTap: () {
                       // Navigate to the student's courses page here
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ClassesScreen(), // Replace with your courses page widget
+                        builder: (context) => Home(), // Replace with your courses page widget
                       ));
                     },
                     child: Container(
@@ -210,7 +167,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                               SizedBox(width: 10),
                               Flexible(
                                 child: Text(
-                                  "Time-Table",
+                                  "TIME TABLE",
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -231,6 +188,55 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                       ),
                     ),
                   ),
+                ),
+                SizedBox(width: 10,),
+                Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to the student's courses page here
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => salary(), // Replace with your courses page widget
+                        ));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 150, // Adjust height as needed
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.work_history),
+                                SizedBox(width: 10),
+                                Flexible(
+                                  child: Text(
+                                    "SALARY",
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("20%", style: TextStyle(fontSize: 30)),
+                                SizedBox(height: 2),
+                                LinearProgressIndicator(
+                                  color: Colors.white10,
+                                  value: 0.18,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+
                 ),
               ],
             ),
@@ -287,7 +293,7 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
                         color: Color(0xFF040B25),
-                      borderRadius: BorderRadius.circular(10)
+                        borderRadius: BorderRadius.circular(10)
                     ),
                     height: 350, // Adjust height as needed
                     child: Center(child:  Column(
@@ -354,28 +360,6 @@ class _StudentDashboardDesktopState extends State<StudentDashboardDesktop> {
 
           ],
         ),
-      ),
-    );
-  }
-}
-
-
-class ResponsiveContainer extends StatelessWidget {
-  final Color color;
-
-  const ResponsiveContainer({required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(10)
-        ),
-        height: 150, // Adjust height as needed
-      
-        child: Center(child: Text('Container')),
       ),
     );
   }

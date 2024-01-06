@@ -5,7 +5,8 @@ import 'package:online_learning_platform/src/contants/authentication/password_fi
 
 import '../../repository/controllers/signup_controller.dart';
 import '../navbar/admin_sidebar.dart';
-import '../navbar/sidebar_options.dart';
+import '../navbar/student_sidebar.dart';
+import '../navbar/teacher_sidebar.dart';
 import 'forget_password_page.dart';
 
 
@@ -29,7 +30,7 @@ class _LoginFormState extends State<LoginForm> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(image: AssetImage("assets/log.png"), width: 150, height: 150),
+          Image(image: AssetImage("assets/educate.jpg"), width: 150, height: 150),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -92,7 +93,7 @@ class _LoginFormState extends State<LoginForm> {
                 Navigator.push(
                   context,
                   PageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) => AdminSidebar(),
+                    pageBuilder: (context, animation, secondaryAnimation) => TeacherSidebar(),
                     transitionsBuilder: (context, animation, secondaryAnimation, child) {
                       return FadeTransition(opacity: animation, child: child);
                     },

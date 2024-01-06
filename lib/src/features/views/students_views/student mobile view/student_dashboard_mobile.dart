@@ -1,6 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:online_learning_platform/src/common_widgets/students/student_timetable.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../../../../common_widgets/students/student_discussion.dart';
 
 class StudentDashboardMobile extends StatefulWidget {
   const StudentDashboardMobile({super.key});
@@ -25,7 +28,7 @@ class _StudentDashboardMobileState extends State<StudentDashboardMobile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Dashboard',
+              'Dashboard Dear Student',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 22,
@@ -58,7 +61,7 @@ class _StudentDashboardMobileState extends State<StudentDashboardMobile> {
                                 SizedBox(width: 10),
                                 Flexible(
                                   child: Text(
-                                    "My program",
+                                    "My Subjects",
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
@@ -97,7 +100,7 @@ class _StudentDashboardMobileState extends State<StudentDashboardMobile> {
                                 SizedBox(width: 10),
                                 Flexible(
                                   child: Text(
-                                    "Members",
+                                    "Test/Assignment",
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
@@ -106,7 +109,7 @@ class _StudentDashboardMobileState extends State<StudentDashboardMobile> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("180", style: TextStyle(fontSize: 30)),
+                                Text("20%", style: TextStyle(fontSize: 30)),
                                 SizedBox(height: 2),
                                 LinearProgressIndicator(
                                   color: Colors.white10,
@@ -136,7 +139,7 @@ class _StudentDashboardMobileState extends State<StudentDashboardMobile> {
                                 SizedBox(width: 10),
                                 Flexible(
                                   child: Text(
-                                    "Mentor",
+                                    "Discussions",
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),
@@ -157,42 +160,50 @@ class _StudentDashboardMobileState extends State<StudentDashboardMobile> {
                         ),
                       ),
                       SizedBox(width: 10),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        height: 150, // Adjust height as needed
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.view_list_outlined),
-                                SizedBox(width: 10),
-                                Flexible(
-                                  child: Text(
-                                    "Mentorship Programs",
-                                    overflow: TextOverflow.ellipsis,
+                      GestureDetector(
+                        onTap: () {
+                          // Navigate to the student's courses page here
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => DiscussionPage(), // Replace with your courses page widget
+                          ));
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          height: 150, // Adjust height as needed
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.view_list_outlined),
+                                  SizedBox(width: 10),
+                                  Flexible(
+                                    child: Text(
+                                      "Time-Table",
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("11", style: TextStyle(fontSize: 30)),
-                                SizedBox(height: 2),
-                                LinearProgressIndicator(
-                                  color: Colors.white10,
-                                  value: 1,
-                                ),
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("1", style: TextStyle(fontSize: 30)),
+                                  SizedBox(height: 2),
+                                  LinearProgressIndicator(
+                                    color: Colors.white10,
+                                    value: 1,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],

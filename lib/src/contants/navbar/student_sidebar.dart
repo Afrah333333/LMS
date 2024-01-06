@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:online_learning_platform/src/common_widgets/admin/admin_dashboard.dart';
 import 'package:sidebarx/sidebarx.dart';
-import '../../common_widgets/admin/admin_registery.dart';
+import '../../common_widgets/students/student_dashboard.dart';
+import '../../common_widgets/students/student_registery.dart';
 import 'navbar_icons.dart';
 
 
 
-class AdminSidebar extends StatelessWidget {
-  AdminSidebar({Key? key}) : super(key: key);
+class StudentSidebar extends StatelessWidget {
+  StudentSidebar({Key? key}) : super(key: key);
 
   final _controller = SidebarXController(selectedIndex: 0, extended: true);
   final _key = GlobalKey<ScaffoldState>();
@@ -148,7 +148,7 @@ class ExampleSidebarX extends StatelessWidget   {
         ),
         const SidebarXItem(
           icon: Icons.app_registration,
-          label: 'Discussions',
+          label: 'Programs',
         ),
 
         const SidebarXItem(
@@ -156,6 +156,22 @@ class ExampleSidebarX extends StatelessWidget   {
           label: 'Announcement',
         ),
 
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Events',
+        ),
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Attendance',
+        ),
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Result',
+        ),
+        const SidebarXItem(
+          icon: Icons.message,
+          label: 'Fees',
+        ),
         const SidebarXItem(
           icon: Icons.message,
           label: 'Profile',
@@ -182,9 +198,9 @@ class _ScreensExample extends StatelessWidget {
 
         switch (controller.selectedIndex) {
           case 0:
-            return AdminDashboard();
-        case 1:
-          return AdminRegistery();
+            return StudentDashboard();
+          case 1:
+            return StudentRegistery();
         // case 2:
         //   return AnnouncementPage();
         // case 3:
@@ -192,7 +208,7 @@ class _ScreensExample extends StatelessWidget {
         // case 4:
         //   return DiscussionPage();
           default:
-            return AdminDashboard();
+            return StudentDashboard();
         }
       },
     );

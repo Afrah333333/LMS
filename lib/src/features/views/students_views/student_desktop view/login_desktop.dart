@@ -31,7 +31,7 @@ class _LoginDesktopState extends State<LoginDesktop> {
             width: MediaQuery.of(context).size.width * 0.65,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage("https://static.the.akdn/53832/1642353085-akes-uganda-img_3155_r.jpg?w=1800&auto=format"),
+                  image: NetworkImage("https://www.avanse.com/blogs/images/10feb-blog-2023.jpg"),
                   fit: BoxFit.cover
                   // fit: BoxFit.scaleDown
                 )
